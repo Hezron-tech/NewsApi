@@ -2,8 +2,9 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEWS_BASE_URL='https://newsapi.org/v2/everything?q=bitcoin&apiKey'
-
+    NEWS_BASE_URL='https://newsapi.org/v2/everything?q=bitcoin&apiKey={}'
+    NEWS_SOURCE_URL='https://newsapi.org/v2/top-headlines/sources? category={}apiKey={}'
+    # NEWS_TOP_HEADLINES_URL='https://newsapi.org/v2/top-headlines?country={}'
 
 
 class ProdConfig(Config):
