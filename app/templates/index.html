@@ -1,1 +1,26 @@
-<h1> Hello World </h1>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+   
+{% block content %}
+        <h1>{{title}}</h1>
+        <!-- Popular movie section  -->
+        <h3> Popular News</h3>
+            <h3>BUSINESS NEWS</h3>
+            <ul>
+                
+                {{macro.displayNewsList(business)}}
+            </ul>
+            <h3>TECH NEWS</h3>
+            <ul>
+                
+                {{macro.displayNewsList(technology)}}
+            </ul>
+            <h3>SPORTS NEWS</h3>
+            <ul>
+                
+                {{macro.displayNewsList(sports)}}
+            </ul>
+{% endblock %}  
+
+    
