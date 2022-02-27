@@ -3,17 +3,17 @@
 
 
 {% for news in news_list %}
-<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2" >
-    
-        <li>{{ news.name}}
-        
-        <p>{{ news.description}}</p>
-        <p><a href="{{ news.url}}">View more news</a></p>
+<div class="card col-xs-12 col-sm-4 col-md-2 col-lg-2" style="width: 20rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ news.name}}</h5>
+      <p class="card-text">{{ news.description}}</p>
+      <a href="{{ news.url}}" class="btn btn-primary">more news</a>
+    </div>
+  </div>
 
-        <!-- <p></p> -->
-         </li>
 
-</div>       
+</div>        
     {% endfor %}
 
 {% endmacro %}
