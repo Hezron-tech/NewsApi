@@ -14,11 +14,11 @@ api_key ='dc38d2088e954eb6a28aa1c12dce28e7'
 # Getting base url
 # base_url='https://newsapi.org/v2/top-headlines/sources?category={}?&apiKey={}'
 # Getting the  base url
-base_url = app.config["NEWS_ARTICLE_URL"]
+base_url = app.config["NEWS_SOURCE_URL"]
 
 
-def get_news(title):
-    get_news_url =base_url.format(title,api_key)
+def get_news(category):
+    get_news_url =base_url.format(category,api_key)
     
 
 
@@ -39,15 +39,14 @@ def process_results(news_list):
 
     for new in news_list:
         id=new.get('id')
-        title=new.get('title')
-        urlToImage=new.get('urlToImage')
+        name=new.get('name')
         description=new.get('description')
         url=new.get('url')
-        publishedAt=new.get('publishedAt')
-        # country=new.get('country')
+        category=new.get('category')
+        country=new.get('country')
 
         
-        news_object=News(id,title,urlToImage,description,url,publishedAt)
+        news_object=News(id,name,description,url,category,country)
 
         news_results.append(news_object)
 
